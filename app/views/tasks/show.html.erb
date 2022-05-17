@@ -1,0 +1,7 @@
+<h2>Task detail</h2>
+<p><strong>Title:</strong><%= @task.title %></p>
+<p><strong>Details:</strong><%= @task.details %></p>
+<p><strong>Status:</strong><%= @task.completed %></p>
+
+<%= link_to "Edit the task", edit_task_path, class:"btn btn-warning" %>
+<%= link_to  "Back to tasks", tasks_path, class:"btn btn-primary" %>
