@@ -1,3 +1,90 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.list {
+  position: relative;
+  background: var(--white);
+  width: 25rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin: 0 auto;
+
+  & h2 {
+    background: var(--blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  & ul {
+    position: relative;
+    padding: 2em;
+
+    & li {
+      position: relative;
+      list-style: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      & label {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        & input {
+          visibility: hidden;
+          appearance: none;
+
+          &:checked {
+
+            & ~ p {
+              text-decoration: line-through;
+              color: var(--grey);
+            }
+
+            & ~ span {
+              background: var(--blue);
+              border: 1px solid var(--blue);
+
+              &::before {
+                border-left: 2px solid var(--white);
+                border-bottom: 2px solid var(--white);
+              }
+            }
+          }
+        }
+
+        & p {
+          position: absolute;
+        }
+
+        & span {
+          position: relative;
+          width: 2rem;
+          height: 2rem;
+          border: 1px solid var(--grey);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            width: 1rem;
+            height: 0.5rem;
+            border-left: 2px solid var(--grey);
+            border-bottom: 2px solid var(--grey);
+            transform: rotate(-40deg);
+          }
+        }
+      }
+    }
+  }
+}

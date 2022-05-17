@@ -1,8 +1,15 @@
-<h2>My tasks</h2>
-<ul>
-<% @tasks.each do |task| %>
-<li><%= link_to task.title, task_path(task.id) %> - <%= link_to "delete", task_path(task.id), method:'delete', data: { confirm: "Are you sure?" } %></li>
-<% end %>
-</ul>
-
-<%= link_to "Add new task", tasks_new_path, class:"btn btn-primary" %>
+<div class="list">
+  <h2>ToDo List</h2>
+  <ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <label>
+        <input type="checkbox" name="" <%= task.completed == true ? "checked" : "" %> disabled="disabled">
+        <p><%= link_to task.title, task_path(task.id) %></p>
+        <span></span>
+      </label>
+    </li>
+    <% end %>
+  </ul>
+  <%= link_to "Add task", tasks_new_path,id:"add-but", class:"btn btn-primary"%>
+</div>
